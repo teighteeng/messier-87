@@ -1,19 +1,21 @@
-@import url('https://fonts.googleapis.com/css?family=Prompt');
+@import url('https://fonts.googleapis.com/css?family=Prompt:300,400,800');
+@import url('animate.css');
 
-* { cursor: default; }
+* {
+    cursor: default;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 body {
     background-color: #0B0505;
     font-family: 'Prompt', sans-serif;
+    color: white;
     margin: 0;
-}
-
-footer {
-    width: 100vw;
-    height: 12.5vh;
-    background-image: linear-gradient(180deg, rgba(0,0,0,0.00) 0%, #000000 100%);
-    position: fixed;
-    margin-top: -12.5vh;
 }
 
 #main {
@@ -23,15 +25,102 @@ footer {
     white-space: nowrap;
 }
 
-.screen {
-    width: 100vw;
-    height: 100vh;
-    display: inline-block;
-    position: relative;
-    margin: 0 -6px -7px 0;
+header {
+    position: fixed;
+    width: 18px;
+    height: 18px;
+    top: 43px;
+    right: 43px;
 }
 
-.screen * { position: absolute; }
+header * {
+    cursor: pointer;
+}
+
+footer {
+    position: fixed;
+    width: 100vw;
+    height: 12.5vh;
+    bottom: 0;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000000 100%);
+}
+
+footer div {
+    position: relative;
+}
+
+footer div:first-child .nav-desktop {
+    display: inline;
+}
+
+footer div:first-child .nav-tablet {
+    display: none;
+}
+
+footer div nav:first-child {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    margin: calc(6.25vh - 12px);
+}
+
+footer nav:first-child a {
+    margin-right: 26px;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.6px;
+    opacity: 0.38;
+}
+
+footer nav:first-child a:last-child {
+    margin-right: 0;
+}
+
+footer nav:first-child .active {
+    opacity: 1;
+}
+
+footer div:last-child div {
+    position: absolute;
+    width: 99px;
+    height: 15px;
+    right: 45px;
+    margin: calc(6.25vh - 10px);
+}
+
+footer div:last-child div a {
+    cursor: pointer;
+}
+
+footer div:last-child div a svg {
+    float: left;
+    width: auto;
+    height: 14px;
+    cursor: pointer;
+}
+
+footer div:last-child div p {
+    float: left;
+    width: auto;
+    height: auto;
+    margin: 0 20px 0 20px;
+    font-weight: 300;
+    font-size: 10px;
+    letter-spacing: 0.83px;
+    text-align: center;
+}
+
+.screen {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 -6px -7px 0;
+    display: inline-block;
+}
+
+.screen * {
+    position: absolute;
+}
 
 .screen:nth-child(1) {
     /* background: red; */
@@ -41,14 +130,23 @@ footer {
     background: green;
 }
 
+.filer-bg {
+    width: 37.5vw;
+    height: 100vh;
+    right: 37.5vw;
+    z-index: -1;
+    background-image: linear-gradient(90deg, #0B0505 2%, rgba(11, 5, 5, 0.00) 100%);
+}
+
 .wrap-bg {
     width: 75vw;
     height: 100vh;
+    right: 0;
+    z-index: -2;
     background-image: url('../images/m87.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    right: 0;
 }
 
 .screen:nth-child(1) .wrap-content {
@@ -63,14 +161,13 @@ footer {
 }
 
 .screen:nth-child(1) .wrap-content div:nth-child(1) h1 {
-    font-weight: 400;
+    top: 50%;
+    margin-top: -50px;
+    font-weight: 800;
     font-size: 4em;
     letter-spacing: 8px;
     text-transform: uppercase;
-    color: #FFFFFF;
     opacity: 0.42;
-    top: 50%;
-    margin-top: -50px;
 }
 
 .screen:nth-child(1) .wrap-content div:nth-child(2) {
@@ -87,31 +184,76 @@ footer {
 }
 
 .screen:nth-child(1) .wrap-content div:nth-child(2) h2 {
+    margin-top: -5px;
     font-weight: 300;
     font-size: 0.8em;
     letter-spacing: 6px;
     text-transform: uppercase;
-    color: #FFFFFF;
-    margin-top: -5px;
 }
 
-.screen:nth-child(1) .wrap-content div:nth-child(2) br { line-height: 48px; }
+.screen:nth-child(1) .wrap-content div:nth-child(2) br {
+    line-height: 48px;
+}
 
 .screen:nth-child(1) .wrap-content div:nth-child(3) {
     width: 25vw;
     height: 37.5vh;
     top: 50vh;
+    background: green;
 }
 
 .screen:nth-child(1) .wrap-content div:nth-child(3) p {
-    width: 100%;
-    height: auto;
-    margin-top: 0;
+    height: fit-content;
+    top: 50%;
+    margin: 0;
+    transform: translateY(-50%);
     font-weight: 300;
     font-size: 0.8em;
-    color: #FFFFFF;
     letter-spacing: 1.2px;
     white-space: pre-wrap;
-    top: 25%;
     cursor: default;
+    background: red;
+}
+
+@media screen and (max-width: 1024px) {
+    footer div:first-child .nav-desktop {
+        display: none;
+    }
+
+    footer div:first-child .nav-tablet {
+        display: inline;
+    }
+
+    footer div:first-child .nav-tablet {
+        width: 22px;
+        height: 13px;
+        position: absolute;
+        margin: calc(6.25vh - 12px);
+    }
+
+    footer div:last-child div {
+        right: 0;
+        margin: calc(6.25vh - 7.5px);
+    }
+
+    footer nav:last-child {
+        width: 100px;
+        height: 100px;
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        height: 6.25vh;
+        background: red;
+    }
+
+    footer div:first-child .nav-tablet {
+        margin: calc(3.125vh - 12px);
+    }
+
+    footer div:last-child div {
+        margin: calc(3.125vh - 7.5px);
+    }
 }
