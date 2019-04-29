@@ -147,6 +147,9 @@ footer div:last-child div p {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    -webkit-animation-name: home-bg;
+    -webkit-animation-duration: 8s;
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .screen:nth-child(1) .wrap-content {
@@ -167,7 +170,11 @@ footer div:last-child div p {
     font-size: 4em;
     letter-spacing: 8px;
     text-transform: uppercase;
-    opacity: 0.42;
+    opacity: 0;
+    -webkit-animation-name: home-head-text;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-delay: 2s;
+    -webkit-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .screen:nth-child(1) .wrap-content div:nth-child(2) {
@@ -199,7 +206,6 @@ footer div:last-child div p {
     width: 25vw;
     height: 37.5vh;
     top: 50vh;
-    background: green;
 }
 
 .screen:nth-child(1) .wrap-content div:nth-child(3) p {
@@ -212,7 +218,6 @@ footer div:last-child div p {
     letter-spacing: 1.2px;
     white-space: pre-wrap;
     cursor: default;
-    background: red;
 }
 
 @media screen and (max-width: 1024px) {
@@ -246,7 +251,6 @@ footer div:last-child div p {
 @media screen and (max-width: 768px) {
     footer {
         height: 6.25vh;
-        background: red;
     }
 
     footer div:first-child .nav-tablet {
@@ -255,5 +259,73 @@ footer div:last-child div p {
 
     footer div:last-child div {
         margin: calc(3.125vh - 7.5px);
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .filer-bg {
+        display: none;
+    }
+
+    .wrap-bg {
+        width: 100vw;
+        height: 50vh;
+    }
+
+    .screen:nth-child(1) .wrap-content {
+        width: 100vw;
+        height: 43.7vh;
+        margin: 50vh 0 0 0;
+        background: red;
+    }
+
+    .screen:nth-child(1) .wrap-content div:nth-child(1) h1 {
+        width: 100vw;
+        top: 0;
+        margin: 0;
+        font-size: 2.8em;
+        letter-spacing: 6px;
+        text-align: center;
+        background:green;
+    }
+
+    .screen:nth-child(1) .wrap-content div:nth-child(2) {
+        height: 19px;
+        margin: 0;
+        top: 0;
+    }
+
+    .screen:nth-child(1) .wrap-content div:nth-child(2) div {
+        width: 100vw;
+        height: 19px;
+        top: 68px;
+        margin: 0;
+        background-color: aqua;
+    }
+
+    .screen:nth-child(1) .wrap-content div:nth-child(2) div h2 {
+        top: 5px;
+    }
+
+    .screen:nth-child(1) .wrap-content div:nth-child(2) div h2:nth-child(1) {
+        left: 5vw;
+    }
+
+    .screen:nth-child(1) .wrap-content div:nth-child(2) div h2:nth-child(3) {
+        /* left: 50%;
+        transform: translateX(50%); */
+        margin-left: 26vw;
+    }
+
+    .screen:nth-child(1) .wrap-content div:nth-child(2) div h2:nth-child(5) {
+        right: 5vw;
+    }
+
+    .screen:nth-child(1) .wrap-content div:nth-child(2) div h2 br {
+        display: none;
+    }
+
+    .screen:nth-child(1) .wrap-content div:nth-child(3) {
+        display: none;
     }
 }
