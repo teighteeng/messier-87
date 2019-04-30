@@ -1,4 +1,4 @@
-@keyframe fade {
+@keyframes fade {
     0% {
         opacity: 0;
     }
@@ -8,9 +8,23 @@
     }
 }
 
+@keyframes nav-menu-desktop {
+    0% {
+        margin-left: -5px;
+    }
+
+    100% {
+        margin-left: 0;
+    }
+}
+
 @keyframes home-bg {
     0% {
         width: 55vw;
+        opacity: 0;
+    }
+
+    10% {
         opacity: 0.1;
     }
 
@@ -28,6 +42,18 @@
 
     100% {
         top: 50%;
-        opacity: 0.42;
+        opacity: 0.42;      
+    }
+}
+
+@keyframes home-content-first {
+    0% {
+        margin-top: 20px;
+        opacity: 0;
+    }
+
+    100% {
+        margin-top: -5px;
+        opacity: 1;      
     }
 }
